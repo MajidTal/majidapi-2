@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Management</title>
+    <style>
+        .table-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .table-section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 30%;
+        }
+
+        .task {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .task-info {
+            margin-bottom: 5px;
+        }
+
+        #cardForm {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+
+        #cardForm input[type="text"] {
+            margin-bottom: 10px;
+        }
+
+        #cardForm button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label for="projectName">Enter Project Name:</label>
+    <input type="text" id="projectName">
+    <button onclick="setProjectName()">Set Name</button>
+    <div id="displayProjectName"></div>
+
+    <div class="table-container">
+        <div class="table-section" id="section1"> <!-- Update ID -->
+            <h2>To Do</h2>
+            <div id="todoTasks"></div>
+        </div>
+        <div class="table-section" id="section2"> <!-- Update ID -->
+            <h2>In Progress</h2>
+            <div id="inProgressTasks"></div>
+        </div>
+        <div class="table-section" id="section3"> <!-- Update ID -->
+            <h2>Done</h2>
+            <div id="doneTasks"></div>
+        </div>
+    </div>
+
+    <div id="cardForm">
+        <input type="text" id="cardName" placeholder="Card Name">
+        <input type="text" id="cardDescription" placeholder="Card Description">
+        <select id="cardStatus">
+            <option value="todo">To Do</option>
+            <option value="inProgress">In Progress</option>
+            <option value="done">Done</option>
+        </select>
+        <button onclick="createCard1()">Add Card</button>
+        <input type="text" id="deleteTaskId" placeholder="Select card ID to remove">
+        <button type="submit" onclick="deleteCard()">Delete</button>
+    </div>
+
+    <div id="updateCardForm">
+        <h3>Update Card</h3>
+        <input type="text" id="updateTaskId" placeholder="Enter task ID to update">
+        <div>
+            <input type="text" id="updateCardTitle" placeholder="Card Name">
+        </div>
+        <div>
+            <input type="text" id="updateCardDescription" placeholder="Card Description">
+        </div>
+        <div>
+            <select id="updateCardStatus">
+                <option value="1">To Do</option>
+                <option value="2">In Progress</option>
+                <option value="3">Done</option>
+            </select>
+        </div>
+        <button onclick="updateCard()">Update Card</button>
+    </div>
+
+    <!-- Include your JavaScript file here -->
+    <script src="Test1.js"></script>
+</body>
+</html>

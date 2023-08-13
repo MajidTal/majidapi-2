@@ -1,0 +1,36 @@
+.table-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.table-section {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 30%;
+}
+
+.task {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.task-info {
+    margin-bottom: 5px;
+}
+
+#cardForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+#cardForm input[type="text"] {
+    margin-bottom: 10px;
+}
+
+#cardForm button {
+    margin-bottom: 10px;
+}
