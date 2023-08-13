@@ -3,42 +3,115 @@
 <head>
     <title>Project Management</title>
     <style>
-        .table-container {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-        .table-section {
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 30%;
-        }
+    #projectName {
+        width: 200px;
+    }
 
-        .task {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 5px;
-        }
+    button {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
 
-        .task-info {
-            margin-bottom: 5px;
-        }
+    .header {
+        background-color: #026AA7;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
 
-        #cardForm {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-        }
+    .table-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
 
-        #cardForm input[type="text"] {
-            margin-bottom: 10px;
-        }
+    .table-section {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 30%;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: background-color 0.3s ease-in-out;
+    }
 
-        #cardForm button {
-            margin-bottom: 10px;
-        }
+    .table-section:hover {
+        background-color: #E0E0E0;
+    }
+
+    .task {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .task:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .task-info {
+        margin-bottom: 5px;
+    }
+
+    #cardForm {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+    }
+
+    #cardForm input[type="text"],
+    #cardForm select {
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    #cardForm button {
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: #026AA7;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    #deleteTaskId {
+        padding: 5px;
+    }
+
+    #updateCardForm {
+        margin-top: 20px;
+        max-width: 300px;
+    }
+
+    /* Task colors based on status */
+    .task.todo {
+        border-left: 4px solid #FFC107;
+    }
+
+    .task.inProgress {
+        border-left: 4px solid #03A9F4;
+    }
+
+    .task.done {
+        border-left: 4px solid #4CAF50;
+    }
     </style>
 </head>
 <body>
