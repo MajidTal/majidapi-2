@@ -14,7 +14,7 @@ import java.util.Map;
 @Setter
 public class Board extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     private String title;
 

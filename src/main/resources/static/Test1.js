@@ -6,6 +6,47 @@ function setProjectName() {
     var projectName = document.getElementById('projectName').value;
 
     document.getElementById('displayProjectName').textContent = "Project Name: " + projectName;
+    createNewBoard();
+}
+ async function createNewBoard() {
+  try {
+    // Get the board title from the input field
+    const projectName = document.getElementById('projectName').value;
+
+    // Prepare the request body
+    const requestBody = {
+      title: projectName,
+    };
+
+    // Configure the request options
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+      redirect: 'follow',
+    };
+
+    // Send the POST request to create a new board
+    const response = await fetch('http://localhost:8080/api/boards', requestOptions);
+
+    if (!response.ok) {
+      throw new Error(`Failed to create board. Status: ${response.status} ${response.statusText}`);
+    }
+
+    // Extract the newly created board data
+    const newBoard = await response.json();
+    console.log('New Board:', newBoard);
+
+    // Clear the input field after successful creation
+    document.getElementById('titleInput').value = '';
+
+
+  } catch (error) {
+    console.error('Error creating board:', error);
+    alert('An error occurred while creating the board.');
+  }
 }
 
 // Function to create an HTML element for a task
@@ -193,5 +234,6 @@ function updateCard() {
             .catch(error => console.log('error', error));
     }
 }
+
 
 
